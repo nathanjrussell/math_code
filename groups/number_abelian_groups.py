@@ -33,7 +33,10 @@ def number_of_abelian_groups(n):
 	prod_part = 1
 	for p in pf_dict:
 		prod_part *= len(get_partition_list(pf_dict[p]))
+		print p,get_partition_list(pf_dict[p])
+
 	return prod_part
 
-for j in range(1,2000):
-	print j, number_of_abelian_groups(j)
+print number_of_abelian_groups(4)
+
+print prime_factor_dict(96)

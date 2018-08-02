@@ -3,8 +3,8 @@ from create_partitions import Create_Partitions
 from itertools import product
 
 class Create_Product_Partitions(object):
-        def __init__(self,number=1):
-                self.number = number
+	def __init__(self,number=1):
+		self.number = number
 		self.product_partitions = []
 		temp_pf_dict = Prime_Fact_Dict(self.number).factorization_dict()
 		

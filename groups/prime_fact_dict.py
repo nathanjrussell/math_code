@@ -8,13 +8,13 @@ class Prime_Fact_Dict(object):
 			while (n % d) == 0:
 				if d not in self.pf_dict:
 					self.pf_dict[d] = 0
-            			self.pf_dict[d]+=1  
-            			n /= d
-        		d += 1
-    		if n > 1:
-       			if n not in self.pf_dict:
-           			self.pf_dict[n] = 0
-       			self.pf_dict[n] += 1
+				self.pf_dict[d]+=1
+				n /= d
+			d += 1
+		if n > 1:
+			if n not in self.pf_dict:
+				self.pf_dict[n] = 0
+			self.pf_dict[n] += 1
  	
 	def factorization_dict(self):
 		return self.pf_dict

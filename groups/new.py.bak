@@ -16,19 +16,19 @@ def list_2_num(a,map_list):
 		
 	return number
 		
-order = 4
+order = 8
 prodpart = Create_Product_Partitions(order)
 partitions = prodpart.partitions()
 
-multiplication_table = [[0,0,0,0],[0,0,1,1],[0,1,2,3],[0,1,3,2]]
+multiplication_table = [[0,0,0,0],[0,1,0,1],[0,0,2,2],[0,1,2,3]]
 multiplication_table[3],multiplication_table[2]= multiplication_table[2],multiplication_table[3]
-print(partitions)
+print partitions
 for partition_number in range(len(partitions)):
-	print(partition_number)
-	print(partitions[partition_number])
+	print partition_number
+	print partitions[partition_number]
 	range_list = []
 	for i in partitions[partition_number]:
-		range_list.append(list(range(i)))
+		range_list.append(range(i))
 
 	element_list = list(product(*range_list))
 
@@ -42,13 +42,10 @@ for partition_number in range(len(partitions)):
 	for x in range(order):
 		for y in range(order):
 			addition_table[x][y] = list_2_num(add_elements(elements[x],elements[y],partitions[partition_number]),partitions[partition_number])
-	print("ADDITION TABLE")	
+		
 	for row in addition_table:
-		print(row)
-	print("MULTIPLICATION TABLE")
-	for row in multiplication_table:
-		print(row)
-	distributive_possibilities = list(product(list(range(4)),list(range(4)),list(range(4)),list(range(4))))
+		print row
+	distributive_possibilities = list(product(range(4),range(4),range(4),range(4)))
 #	for i in range(4):
 #		for j in range(4):
 #			for k in range(4):
@@ -68,4 +65,4 @@ for partition_number in range(len(partitions)):
 #		result = list_2_num(add_elements(add1,add2,partitions[partition_number]),partitions[partition_number])
 #		fourwise_count[result] += 1
 #	print fourwise_count
-	input("Enter to continue")
+	raw_input("Enter to continue")
